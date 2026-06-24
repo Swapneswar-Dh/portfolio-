@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+
+</body>
+</html>
+<head>
+    <style>
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Arial;
+    margin:40px;
+}
+
+h1{
+    color:darkblue;
+}
+
+h2{
+    color:green;
+}
+
+table{
+    width:60%;
+}
+
+img{
+    width:220px;
+    border-radius:50%;
+    border:4px solid #38bdf8;
+    box-shadow:0px 0px 25px #38bdf8;
+}
+</style>
+<style>
+nav{
+    margin-bottom:20px;
+}
+
+nav a{
+    text-decoration:none;
+    font-size:20px;
+    margin:10px;
+}
+
+body{
+    font-family: Arial;
+    margin:40px;
+    background-color:#f5f5f5;
+}
+
+img{
+    border-radius:10px;
+    box-shadow:0px 4px 15px gray;
+}
+
+nav a{
+    text-decoration:none;
+    font-size:20px;
+    margin:10px;
+    color:darkblue;
+    font-weight:bold;
+}
+body{
+    font-family: Arial, sans-serif;
+    margin:40px;
+    background-color:#0f172a;
+    color:white;
+}
+
+h1{
+    color:#60a5fa;
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+h2{
+    color:#38bdf8;
+}
+
+nav{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+nav a{
+    text-decoration:none;
+    font-size:20px;
+    margin:10px;
+    color:white;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+img{
+    border-radius:15px;
+    box-shadow:0px 0px 20px rgba(255,255,255,0.3);
+}
+
+table{
+    width:60%;
+    background-color:#1e293b;
+    color:white;
+}
+
+th,td{
+    padding:10px;
+}
+.skill-card{
+    display:inline-block;
+    background:#1e293b;
+    padding:12px 20px;
+    margin:10px;
+    border-radius:10px;
+    border:1px solid #38bdf8;
+}
+.project-card{
+    background:#1e293b;
+    padding:20px;
+    margin:15px 0;
+    border-radius:10px;
+    border-left:5px solid #38bdf8;
+}
+
+
+
+body{
+    font-family: Arial, sans-serif;
+    margin:40px;
+    background-color:#0f172a;
+    color:white;
+    line-height:1.6;
+}
+
+h1{
+    font-size:55px;
+}
+
+h2{
+    font-size:35px;
+}
+
+p, li{
+    font-size:20px;
+}
+
+.project-card:hover{
+    transform:scale(1.02);
+    transition:0.3s;
+}
+
+.skill-card:hover{
+    background:#38bdf8;
+    color:black;
+    transition:0.3s;
+}
+a{
+    text-decoration:none;
+}
+
+a[href="#contact"]{
+    background:#38bdf8;
+    color:black;
+    padding:10px 20px;
+    border-radius:8px;
+    font-weight:bold;
+}
+nav{
+    position:sticky;
+    top:0;
+    background:#0f172a;
+    padding:15px;
+}
+button{
+    padding:10px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+#typing{
+    color:#38bdf8;
+    font-size:22px;
+    font-weight:bold;
+}
+button{
+    background:#38bdf8;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    margin:5px;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+.skills span{
+    display:inline-block;
+    padding:10px 15px;
+    margin:5px;
+    border:1px solid #38bdf8;
+    border-radius:20px;
+}
+nav{
+    position:sticky;
+    top:0;
+    background:#0f172a;
+    padding:15px;
+    z-index:1000;
+}
+p{
+    max-width:900px;
+}
+.project-card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+    margin:15px 0;
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0px 0px 20px #38bdf8;
+}
+</style>
+    <title>My Portfolio</title>
+</head>
+<script>
+
+alert("Welcome to Swapneswar's Portfolio!");
+
+let darkMode = true;
+
+function changeColor() {
+    if (darkMode) {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        darkMode = false;
+    } else {
+        document.body.style.backgroundColor = "#0f172a";
+        document.body.style.color = "white";
+        darkMode = true;
+    }
+}
+
+function updateClock() {
+    let now = new Date();
+    document.getElementById("clock").innerHTML =
+        now.toLocaleTimeString();
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+let text = "Future Software Engineer 🚀";
+let i = 0;
+
+function typingEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 100);
+    }
+}
+
+typingEffect();
+function welcomeUser() {
+    alert("Hello! Thanks for visiting my portfolio.");
+}
+
+</script>
+
+
+<body>
+    <div style="text-align:right;">
+    <button class="theme-btn" onclick="changeColor()">
+   🌙 Theme
+</button>
+</div>
+    <body>
+        <h2 id="typing"></h2>
+
+<nav align="center">
+    <a href="#about">About</a> |
+    <a href="#goals">Goals</a> |
+    <a href="#education">Education</a> |
+    <a href="#skills">Skills</a> |
+    <a href="#projects">Projects</a> |
+    <a href="#contact">Contact</a>
+</nav>
+
+
+<hr>
+
+<center>
+    <h1>Swapneswar Majhi</h1>
+    <img src="pro.jpg.jpeg" alt="My Photo" width="200">
+
+    <h3 id="clock"></h3>
+
+<button onclick="welcomeUser()">
+👋 Say Hello
+</button>
+<p style="color:#38bdf8;">
+🚀 Future Software Engineer | Full Stack Developer
+</p>
+
+<h2 id="typing"></h2>
+    🚀 Web Developer | App Developer | CSE Student
+    </p>
+    
+    
+   
+</center>
+
+   
+  <center>
+<p>
+    Computer Science Engineering Student |
+    Aspiring Software Developer
+</p>
+
+<p>
+    Bhubaneswar, Odisha 🇮🇳
+</p>
+ <br>
+
+     <a href="#contact">Contact Me</a>
+     <br><br>
+
+    <a href="resume.pdf" target="_blank">
+    <button>📄 Download Resume</button>
+    </a>
+
+</center>
+
+    <h2>About Me</h2>
+
+    <p>
+    I am a B.Tech Computer Science Engineering student passionate about
+    Web Development, Mobile App Development, and Software Engineering.
+    I enjoy solving problems, learning modern technologies, and building
+    real-world projects that create impact.
+    </p>
+    <hr>
+    <h2>My Goals</h2>
+
+    <ul>
+    <li>Learn Web Development</li>
+    <li>Build Mobile Apps</li>
+    <li>Get Internship</li>
+    <li>Become Software Engineer</li>
+    </ul>
+
+    <hr>
+
+    <h2>Education</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Degree</th>
+            <th>Institute</th>
+            <th>Year</th>
+        </tr>
+
+        <tr>
+            <td>B.Tech CSE</td>
+            <td>Siksha 'o' Anusandhan</td>
+            <td>2025 - Present</td>
+        </tr>
+
+    </table>
+
+    <hr>
+
+    <h2>Technical Skills</h2>
+
+    <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>C Programming</span>
+    <span>Git & GitHub</span>
+    </div>
+
+    <hr>
+
+    <h2>Projects</h2>
+
+
+<div class="project-card">
+    <h3>Personal Portfolio Website</h3>
+    <p>
+    Developed a personal portfolio website using HTML, CSS and JavaScript.
+    </p>
+</div>
+
+<div class="project-card">
+    <h3>Study Planner App</h3>
+    <p>
+    A productivity application for managing study schedules and daily tasks.
+    </p>
+</div>
+    <hr>
+
+    <h2>Achievements</h2>
+
+    <ul>
+        <li>Learning Full Stack Development</li>
+        <li>Built Personal Portfolio Website</li>
+        <li>Completed Programming Fundamentals</li>
+    </ul>
+
+    <hr>
+
+    <h2>Career Objective</h2>
+
+    <p>
+        To secure a challenging position in the software industry
+        where I can apply my technical skills, learn new technologies,
+        and contribute to innovative projects.
+    </p>
+
+    <hr>
+
+    <h2 id="contact">Contact Information</h2>
+
+    <p>Email : swapneswar804@gmail.com</p>
+
+    <p>Phone : +91 7847814556</p>
+
+    <p>
+    GitHub :
+    <a href="https://github.com/Swapneswar-Dh" target="_blank">
+    Swapneswar-Dh
+    </a>
+    </p>
+
+    <p>
+    LinkedIn :
+    <a href="https://www.linkedin.com/in/swapneswar-majhi-465174346" target="_blank">
+    My LinkedIn Profile
+    </a>
+    </p>
+
+    <hr>
+
+    <center>
+    <p>
+    © 2026 Swapneswar Majhi | Built with HTML, CSS & JavaScript
+    </p>
+
+    <p>
+    Made with HTML & CSS ❤️
+    </p>
+ </center>
