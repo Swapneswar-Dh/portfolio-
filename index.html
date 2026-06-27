@@ -4,6 +4,7 @@
 </body>
 </html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 html{
     scroll-behavior:smooth;
@@ -17,7 +18,6 @@ body{
 h1{
     color:darkblue;
 }
-
 h2{
     color:green;
 }
@@ -230,6 +230,155 @@ p{
     transform:translateY(-5px);
     box-shadow:0px 0px 20px #38bdf8;
 }
+.tagline{
+    font-size:22px;
+    color:#38bdf8;
+    font-weight:bold;
+    margin-top:10px;
+}
+img{
+    transition:0.4s;
+}
+
+img:hover{
+    transform:scale(1.08);
+}
+nav a:hover{
+    color:#38bdf8;
+}
+#progressBar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:5px;
+    background:#38bdf8;
+    z-index:9999;
+}
+progress{
+    width:300px;
+    height:18px;
+}
+.skill{
+    width:350px;
+    background:#ddd;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.skill div{
+    height:25px;
+    border-radius:20px;
+    text-align:center;
+    color:white;
+    line-height:25px;
+    font-weight:bold;
+}
+
+.html{
+    width:90%;
+    background:#e44d26;
+}
+
+.css{
+    width:80%;
+    background:#264de4;
+}
+
+.js{
+    width:65%;
+    background:#f7df1e;
+    color:black;
+}
+
+.c{
+    width:75%;
+    background:#00599c;
+}
+
+.git{
+    width:70%;
+    background:#f1502f;
+}
+.card{
+    width:300px;
+    border:1px solid white;
+    padding:20px;
+    margin:20px;
+    border-radius:15px;
+    transition:.4s;
+    box-shadow:0 0 10px gray;
+}
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 0 25px #38bdf8;
+}
+.project-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+    body {
+        margin: 0;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p, li {
+        font-size: 16px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    img {
+        width: 170px;
+    }
+
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .skill {
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        max-width: 250px;
+    }
+}
 </style>
     <title>My Portfolio</title>
 </head>
@@ -274,6 +423,16 @@ typingEffect();
 function welcomeUser() {
     alert("Hello! Thanks for visiting my portfolio.");
 }
+window.onscroll = function () {
+
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    let progress = (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("progressBar").style.width = progress + "%";
+};
+document.getElementById("year").innerHTML = new Date().getFullYear();
 
 </script>
 
@@ -285,6 +444,7 @@ function welcomeUser() {
 </button>
 </div>
     <body>
+        <div id="progressBar"></div>
         <h2 id="typing"></h2>
 
 <nav align="center">
@@ -301,6 +461,9 @@ function welcomeUser() {
 
 <center>
     <h1>Swapneswar Majhi</h1>
+    <p class="tagline">
+    🚀 Future Software Engineer | Full Stack Developer
+    </p>
     <img src="pro.jpg.jpeg" alt="My Photo" width="200">
 
     <h3 id="clock"></h3>
@@ -383,32 +546,60 @@ function welcomeUser() {
 
     <h2>Technical Skills</h2>
 
-    <div class="skills">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>C Programming</span>
-    <span>Git & GitHub</span>
+<p>HTML</p>
+<div class="skill">
+    <div class="html">90%</div>
+</div>
+
+<p>CSS</p>
+<div class="skill">
+    <div class="css">80%</div>
+</div>
+
+<p>JavaScript</p>
+<div class="skill">
+    <div class="js">65%</div>
+</div>
+
+<p>C Programming</p>
+<div class="skill">
+    <div class="c">75%</div>
+</div>
+
+<p>Git & GitHub</p>
+<div class="skill">
+    <div class="git">70%</div>
+</div>
     </div>
 
     <hr>
 
     <h2>Projects</h2>
+    <div class="project-container">
 
-
-<div class="project-card">
-    <h3>Personal Portfolio Website</h3>
-    <p>
-    Developed a personal portfolio website using HTML, CSS and JavaScript.
-    </p>
+<div class="card">
+    <h3>🌐 Personal Portfolio</h3>
+    <p>Developed a responsive portfolio website using HTML, CSS and JavaScript.</p>
 </div>
 
-<div class="project-card">
-    <h3>Study Planner App</h3>
-    <p>
-    A productivity application for managing study schedules and daily tasks.
-    </p>
+<div class="card">
+    <h3>📚 Study Planner App</h3>
+    <p>A simple application to manage study schedules and daily tasks.</p>
 </div>
+
+<div class="card">
+    <h3>🧮 Calculator</h3>
+    <p>A basic calculator built using HTML, CSS and JavaScript.</p>
+</div>
+    </div>
+    <h2>Certificates</h2>
+
+<ul>
+    <li>🏆 HTML & CSS Basics</li>
+    <li>🏆 C Programming</li>
+    <li>🏆 Git & GitHub (Upcoming)</li>
+</ul>
+
     <hr>
 
     <h2>Achievements</h2>
@@ -431,32 +622,41 @@ function welcomeUser() {
 
     <hr>
 
-    <h2 id="contact">Contact Information</h2>
+   <h2>Contact Information</h2>
 
-    <p>Email : swapneswar804@gmail.com</p>
+<form action="https://formsubmit.co/swapneswar804@gmail.com" method="POST">
 
-    <p>Phone : +91 7847814556</p>
+    <input type="text" name="name" placeholder="Enter Your Name" required>
+    <br><br>
 
-    <p>
-    GitHub :
-    <a href="https://github.com/Swapneswar-Dh" target="_blank">
-    Swapneswar-Dh
-    </a>
-    </p>
+    <input type="email" name="email" placeholder="Enter Your Email" required>
+    <br><br>
 
-    <p>
-    LinkedIn :
-    <a href="https://www.linkedin.com/in/swapneswar-majhi-465174346" target="_blank">
-    My LinkedIn Profile
-    </a>
-    </p>
+    <textarea name="message" placeholder="Enter Your Message" rows="5" cols="40" required></textarea>
+    <br><br>
+
+    <input type="hidden" name="_captcha" value="false">
+
+    <input type="hidden" name="_next" value="https://swapneswar-dh.github.io/portfolio-/">
+
+    <button type="submit">Send Message</button>
+
+</form>
+
+<p>📧 Email: swapneswar804@gmail.com</p>
+<p>📞 Phone: +91 7847814556</p>
+<p>💻 GitHub:
+<a href="https://github.com/Swapneswar-Dh" target="_blank">Swapneswar-Dh</a>
+</p>
+
+<p>💼 LinkedIn:
+<a href="YOUR_LINKEDIN_LINK" target="_blank">My LinkedIn Profile</a>
+</p>
 
     <hr>
 
     <center>
-    <p>
-    © 2026 Swapneswar Majhi | Built with HTML, CSS & JavaScript
-    </p>
+    <p>© <span id="year"></span> Swapneswar Majhi | Built with HTML, CSS & JavaScript</p>
 
     <p>
     Made with HTML & CSS ❤️
