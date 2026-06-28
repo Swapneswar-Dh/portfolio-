@@ -379,6 +379,126 @@ progress{
         max-width: 250px;
     }
 }
+.certificate-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.certificate-card{
+    width:280px;
+    background:#1e293b;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 10px gray;
+    transition:0.3s;
+    text-align:center;
+}
+
+.certificate-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 20px #38bdf8;
+}
+#topBtn{
+    display:none;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:999;
+    border:none;
+    outline:none;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    padding:15px;
+    border-radius:50%;
+    font-size:18px;
+}
+
+#topBtn:hover{
+    background:#2563eb;
+}
+.timeline{
+    border-left:4px solid #38bdf8;
+    margin:20px;
+    padding-left:20px;
+}
+
+.timeline-item{
+    margin-bottom:25px;
+    padding:15px;
+    background:#1e293b;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.timeline-item:hover{
+    transform:translateX(10px);
+    box-shadow:0 0 15px #38bdf8;
+}
+/* Mobile Responsive Design */
+@media (max-width: 768px){
+
+    body{
+        margin:15px;
+    }
+
+    h1{
+        font-size:36px;
+        text-align:center;
+    }
+
+    h2{
+        font-size:28px;
+        text-align:center;
+    }
+
+    p, li{
+        font-size:17px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    nav a{
+        font-size:16px;
+    }
+
+    img{
+        width:180px;
+        display:block;
+        margin:auto;
+    }
+
+    .project-container,
+    .certificate-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card,
+    .project-card,
+    .certificate-card{
+        width:90%;
+    }
+
+    .skill{
+        width:100%;
+    }
+
+    table{
+        width:100%;
+    }
+
+    button{
+        width:100%;
+    }
+}
 </style>
     <title>My Portfolio</title>
 </head>
@@ -433,6 +553,25 @@ window.onscroll = function () {
     document.getElementById("progressBar").style.width = progress + "%";
 };
 document.getElementById("year").innerHTML = new Date().getFullYear();
+
+let topButton = document.getElementById("topBtn");
+
+window.addEventListener("scroll", function () {
+
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        topButton.style.display = "block";
+    } else {
+        topButton.style.display = "none";
+    }
+
+});
+
+function topFunction() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 
 </script>
 
@@ -592,13 +731,54 @@ document.getElementById("year").innerHTML = new Date().getFullYear();
     <p>A basic calculator built using HTML, CSS and JavaScript.</p>
 </div>
     </div>
-    <h2>Certificates</h2>
+  
+<hr>
 
-<ul>
-    <li>🏆 HTML & CSS Basics</li>
-    <li>🏆 C Programming</li>
-    <li>🏆 Git & GitHub (Upcoming)</li>
-</ul>
+<h2>🏆 Certificates</h2>
+
+<div class="certificate-container">
+
+    <div class="certificate-card">
+        <h3>HTML & CSS</h3>
+        <p>Completed Basic HTML & CSS Course</p>
+        <p><b>Status:</b> Completed ✅</p>
+    </div>
+
+    <div class="certificate-card">
+        <h3>C Programming</h3>
+        <p>Completed C Programming Course</p>
+        <p><b>Status:</b> Completed ✅</p>
+    </div>
+
+    <div class="certificate-card">
+        <h3>Git & GitHub</h3>
+        <p>Learning Git & GitHub</p>
+        <p><b>Status:</b> In Progress 🚀</p>
+    </div>
+
+</div>
+
+<hr>
+<h2>📈 Learning Journey</h2>
+
+<div class="timeline">
+
+    <div class="timeline-item">
+        <h3>2024</h3>
+        <p>Started B.Tech in Computer Science & Engineering at ITER.</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>2025</h3>
+        <p>Learned HTML, CSS, JavaScript, Git & GitHub. Built my personal portfolio website.</p>
+    </div>
+
+    <div class="timeline-item">
+        <h3>Future</h3>
+        <p>Preparing for internships and Full Stack Web Development.</p>
+    </div>
+
+</div>
 
     <hr>
 
@@ -650,7 +830,7 @@ document.getElementById("year").innerHTML = new Date().getFullYear();
 </p>
 
 <p>💼 LinkedIn:
-<a href="YOUR_LINKEDIN_LINK" target="_blank">My LinkedIn Profile</a>
+<a href=https://www.linkedin.com/in/swapneswar-majhi-465174346 target="_blank">My LinkedIn Profile</a>
 </p>
 
     <hr>
@@ -662,3 +842,4 @@ document.getElementById("year").innerHTML = new Date().getFullYear();
     Made with HTML & CSS ❤️
     </p>
  </center>
+ <button id="topBtn" onclick="topFunction()">⬆</button>
